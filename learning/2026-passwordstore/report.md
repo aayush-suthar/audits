@@ -1,50 +1,3 @@
----
-header-includes:
-  - \usepackage{titling}
-  - \usepackage{graphicx}
-  - \usepackage{booktabs}
-  - \usepackage{float}
-  - \restylefloat{table}
----
-
-\begin{titlepage}
-    \centering
-    \vspace*{1cm}
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.75\textwidth]{cat.jpg} 
-    \end{figure}
-    \vspace{1.5cm}
-    {\Huge\bfseries Password Store Audit Report\par}
-    \vspace{0.5cm}
-    {\Large\itshape Aayush Suthar\par}
-    \vspace{0.5cm}
-    {\large \today\par}
-    \vfill
-\end{titlepage}
-
-<!-- Your report starts here! -->
-
-Prepared by: [Aayush Suthar](https://x.com/0xAayux)
-
-# Table of Contents
-- [Table of Contents](#table-of-contents)
-- [Disclaimer](#disclaimer)
-- [Risk Classification](#risk-classification)
-- [Protocol Summary](#protocol-summary)
-- [Audit Details](#audit-details)
-  - [Scope](#scope)
-  - [Roles](#roles)
-- [Executive Summary](#executive-summary)
-  - [Executive Summary](#executive-summary-1)
-  - [Issues found](#issues-found)
-- [Findings](#findings)
-  - [High](#high)
-    - [\[H-1\] Storing the password on-chain make it visible to anyone, and no longer private](#h-1-storing-the-password-on-chain-make-it-visible-to-anyone-and-no-longer-private)
-    - [\[H-2\] `PasswordStore::setPassword` has no access controls, meaning a non-owner could change the password](#h-2-passwordstoresetpassword-has-no-access-controls-meaning-a-non-owner-could-change-the-password)
-  - [Informational](#informational)
-    - [\[I-1\] The `PasswordStore::getPassword` natspec indicates a parameter that doesn't exist, causing the natspec to be incorrect](#i-1-the-passwordstoregetpassword-natspec-indicates-a-parameter-that-doesnt-exist-causing-the-natspec-to-be-incorrect)
-
 # Disclaimer
 
 The auditor makes all effort to find as many vulnerabilities in the code in the given time period, but holds no responsibilities for the findings provided in this document. A security audit by the team is not an endorsement of the underlying business or product. The audit was time-boxed and the review of the code was solely on the security aspects of the Solidity implementation of the contracts.
@@ -101,8 +54,6 @@ real vulnerabilities present in the codebase. Two High severity issues and one
 Informational finding were identified during the review.
 
 Tools used: Foundry, Manual Review
-
-\newpage
 
 ## Issues found
 
